@@ -1,3 +1,25 @@
-.content-wrapper{
-    max-width: 1200px;
+/*TEMP*/
+body{
+    background: url('/assets/images/led_1.jpg');
+    background-repeat: no-repeat;
+    background-size : auto;
+}
+body.img_2{
+    background: url('/assets/images/led_2.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+}
+body.img_3{
+    background: url('/assets/images/led_3.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+}
+.construction-container{
+    background-color: #F2F0EF;
+    border-radius: 15px;
+    text-align: center;
+    padding: 40px;
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+    box-shadow: 0px 0px 10px #cdcdcd;
 }
