@@ -43,6 +43,45 @@ $(document).ready(function() {
     $('.hamburger-menu a').on('click', function() {
         $('.hamburger-menu-container').removeClass('open'); // Remove 'open' class to close menu
     });
+/*********
+ CALCULATE AGE
+ *********/
+    var birthDate = new Date(1998, 7, 8); // Month is 0-indexed (7 = August)
+    var today = new Date();
+    var years = today.getFullYear() - birthDate.getFullYear();
+    var isBeforeBirthday = (today.getMonth() < birthDate.getMonth()) ||
+        (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate());
+    if (isBeforeBirthday) {
+        years--;
+    }
+    var lastBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+    if (isBeforeBirthday) {
+        lastBirthday.setFullYear(today.getFullYear() - 1);
+    }
+    var daysSinceLastBirthday = Math.floor((today - lastBirthday) / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+    $('.age').text(years + ' years and ' + daysSinceLastBirthday + ' days old');
+/*********
+ LAST PUSH
+*********/
+    var repoOwner = 'marcokleimans';
+    var repoName = 'marcokleimans.github.io';
+
+    $.get(`https://api.github.com/repos/${repoOwner}/${repoName}/events`, function(data) {
+        var lastPushEvent = data.find(event => event.type === 'PushEvent');
+        if (lastPushEvent) {
+            var lastPushTimestamp = lastPushEvent.created_at;
+            var lastPushDate = new Date(lastPushTimestamp);
+            const options = {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            };
+            var formattedDate = lastPushDate.toLocaleString("en-US", options);
+            $('.last-push').text(formattedDate);
+        }
+    });
+
 });
 //Background rotation
 // $(document).ready(function() {

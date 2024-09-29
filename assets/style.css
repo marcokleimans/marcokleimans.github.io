@@ -24,10 +24,14 @@ html, body {
 .hamburger-menu, .fa-solid.fa-bars{
     display: none;
 }
-.main-content-wrapper{
+.fixed-width-wrapper{
     display: block;
     max-width: 1240px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+.full-width-wrapper{
+    width: 100%;
     padding: 0 20px;
 }
 /*MOBILE*/
@@ -64,7 +68,8 @@ html, body {
         display: block;
         position: relative;
         text-align: right;
-        margin: 20px 20px 0 0;
+        margin: 20px 20px 20px 0;
+        font-size: 1.5rem;
     }
     .dark-theme .hamburger-menu a:hover, .dark-theme .hamburger-menu a:focus{
         background: var(--sand);
@@ -76,6 +81,34 @@ html, body {
 /*********
 THEME
 **********/
+.full-width-wrapper.intro{
+    display: flex;
+    justify-content: center;
+}
+.intro{
+    background: url("/assets/images/background-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.intro .row{
+    max-width: 100%;
+}
+.intro figure{
+    overflow: hidden;
+    border-radius: 50%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+.intro figure img{
+    width: 300px;
+}
+.intro .col-12:last-child{
+    border-radius: 15px;
+    padding: 20px 40px;
+    margin: 20px 0;
+
+}
 /*1 - DARK*/
 .dark-theme{
     background-color: var(--dark);
@@ -91,6 +124,9 @@ THEME
 .dark-theme .mega-menu a.active{
     border-bottom: 3px solid var(--light);
 }
+.dark-theme .intro .col-12:last-child{
+    background-color: rgba(18,18,18,0.9);
+}
 /*2 - LIGHT*/
 .light-theme{
     background-color: var(--light);
@@ -105,6 +141,9 @@ THEME
 }
 .light-theme .mega-menu a.active{
     border-bottom: 3px solid var(--dark);
+}
+.light-theme .intro .col-12:last-child{
+    background-color: rgba(249,246,238,0.9);
 }
 /*THEME SWITCH*/
 .switch-container{
