@@ -1,3 +1,25 @@
+//toggle
+$(document).ready(function() {
+    var $body = $('body');
+    var $checkbox = $('#switch');
+
+    // Set initial theme based on checkbox state
+    if ($checkbox.is(':checked')) {
+        $body.removeClass('light-theme').addClass('dark-theme');
+    } else {
+        $body.removeClass('dark-theme').addClass('light-theme');
+    }
+
+    // Toggle theme when checkbox is clicked
+    $checkbox.on('change', function() {
+        if ($checkbox.is(':checked')) {
+            $body.removeClass('light-theme').addClass('dark-theme');
+        } else {
+            $body.removeClass('dark-theme').addClass('light-theme');
+        }
+    });
+});
+
 //Background rotation
 $(document).ready(function() {
     var $body = $('body');
