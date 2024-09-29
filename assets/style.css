@@ -1,29 +1,132 @@
+/************
+GENERAL
+*************/
+:root {
+    --dark: #121212;
+    --light: #F9F6EE;
+    --gloom: #9e9e9e;
+    --ocean: #004085;
+    --glaciar: #cce5ff;
+    --sand: #856404;
+    --shine: #fff3cd;
+}
+html, body {
+    font-family: "Lato", sans-serif;
+}
+.mega-menu{
+    text-align: center;
+    padding: 20px 0;
+}
+.mega-menu a{
+    margin: 0 20px;
+    text-decoration: none;
+}
+.hamburger-menu{
+    display: none;
+}
+/*MOBILE*/
 
+/*********
+THEME
+**********/
+/*1 - DARK*/
+.dark-theme{
+    background-color: var(--dark);
+    color: var(--light);
+}
+.fa-moon{
+    margin-left: 5px;
+    color: var(--ocean);
+}
+.dark-theme a{
+    color: var(--light);
+}
+.dark-theme .mega-menu a.active{
+    border-bottom: 3px solid var(--light);
+}
+/*2 - LIGHT*/
+.light-theme{
+    background-color: var(--light);
+    color: var(--dark);
+}
+.fa-sun{
+    margin-right: 5px;
+    color: var(--sand);
+}
+.light-theme a{
+    color: var(--dark);
+}
+.light-theme .mega-menu a.active{
+    border-bottom: 3px solid var(--dark);
+}
+/*THEME SWITCH*/
+.switch-container{
+    position: absolute;
+    bottom: 4%;
+    right: 2%;
+}
+.toggle:hover {
+    cursor: pointer;
+}
+.checkbox {
+    display : none;
+}
+/*Night mode*/
+/*Toggle background*/
+.toggle {
+    position : relative ;
+    display : flex;
+    align-items: center;
+    justify-content: space-around;
+    width : 70px;
+    height : 35px;
+    background-color: var(--glaciar);
+    box-shadow: inset 0 0 5px var(--ocean);
+    border-radius: 30px;
+}
+/* Slider */
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--ocean);
+    top: 5px;
+    left: 5px;
+    transition:  all 0.5s;
+}
+/*Light mode*/
+/* Toggle background */
+.checkbox:checked + .toggle {
+    box-shadow: inset 0 0 5px var(--sand);
+    background-color: var(--shine);
+}
+/*Slider */
+.checkbox:checked + .toggle::after {
+    left : 41px;
+    background-color: var(--sand);
+}
 
 /*TEMP*/
-body{
-    background: url('/assets/images/led_1.jpg');
-    background-repeat: no-repeat;
-}
-body.img_2{
-    background: url('/assets/images/led_2.jpg');
-    background-repeat: no-repeat;
-}
-body.img_3{
-    background: url('/assets/images/led_3.jpg');
-    background-repeat: no-repeat;
-}
-.construction-container{
-    background-color: #F2F0EF;
-    border-radius: 15px;
-    text-align: center;
-    padding: 40px;
-    max-width: 400px;
-    margin: 40px auto 0 auto;
-    box-shadow: 0px 0px 10px #cdcdcd;
-}
-@media (max-width: 450px) {
-    .construction-container{
-        margin: 40px 20px 0 20px;
-    }
-}
+/*body{*/
+/*    background: url('/assets/images/led_1.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+/*body.img_2{*/
+/*    background: url('/assets/images/led_2.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+/*body.img_3{*/
+/*    background: url('/assets/images/led_3.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+/*.construction-container{*/
+/*    background-color: #F2F0EF;*/
+/*    border-radius: 15px;*/
+/*    text-align: center;*/
+/*    padding: 40px;*/
+/*    max-width: 400px;*/
+/*    margin: 40px auto 0 auto;*/
+/*    box-shadow: 0px 0px 10px #cdcdcd;*/
+/*}*/
