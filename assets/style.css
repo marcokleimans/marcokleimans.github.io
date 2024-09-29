@@ -1,4 +1,6 @@
-/*General*/
+/************
+GENERAL
+*************/
 :root {
     --dark: #121212;
     --light: #F9F6EE;
@@ -11,23 +13,51 @@
 html, body {
     font-family: "Lato", sans-serif;
 }
+.mega-menu{
+    text-align: center;
+    padding: 20px 0;
+}
+.mega-menu a{
+    margin: 0 20px;
+    text-decoration: none;
+}
+.hamburger-menu{
+    display: none;
+}
+/*MOBILE*/
 
-/*THEME*/
-/*1 - dark*/
+/*********
+THEME
+**********/
+/*1 - DARK*/
 .dark-theme{
     background-color: var(--dark);
+    color: var(--light);
 }
 .fa-moon{
     margin-left: 5px;
     color: var(--ocean);
 }
-/*2 - Light*/
+.dark-theme a{
+    color: var(--light);
+}
+.dark-theme .mega-menu a.active{
+    border-bottom: 3px solid var(--light);
+}
+/*2 - LIGHT*/
 .light-theme{
     background-color: var(--light);
+    color: var(--dark);
 }
 .fa-sun{
     margin-right: 5px;
     color: var(--sand);
+}
+.light-theme a{
+    color: var(--dark);
+}
+.light-theme .mega-menu a.active{
+    border-bottom: 3px solid var(--dark);
 }
 /*THEME SWITCH*/
 .switch-container{
