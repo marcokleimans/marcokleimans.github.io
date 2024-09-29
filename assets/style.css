@@ -13,6 +13,11 @@ GENERAL
 html, body {
     font-family: "Lato", sans-serif;
 }
+.menu-wrapper{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 .mega-menu{
     text-align: center;
     padding: 20px 0;
@@ -36,6 +41,9 @@ html, body {
 }
 /*MOBILE*/
 @media (max-width: 768px) {
+    .menu-wrapper{
+        position: relative;
+    }
     .mega-menu{
         display: none;
     }
@@ -121,6 +129,9 @@ THEME
 .dark-theme a{
     color: var(--light);
 }
+.dark-theme .menu-wrapper{
+    background-color: rgba(18,18,18,0.9);
+}
 .dark-theme .mega-menu a.active{
     border-bottom: 3px solid var(--light);
 }
@@ -138,6 +149,9 @@ THEME
 }
 .light-theme a{
     color: var(--dark);
+}
+.light-theme .menu-wrapper{
+    background-color: rgba(249,246,238,0.9);
 }
 .light-theme .mega-menu a.active{
     border-bottom: 3px solid var(--dark);
