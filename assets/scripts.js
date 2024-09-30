@@ -23,6 +23,7 @@ $(document).ready(function() {
 /***********
  MENU BORDER
  **********/
+    // Underline on Click
     var $megaMenuItem = $('.mega-menu a')
     $($megaMenuItem).on('click', function() {
         // Remove 'active' class from all menu items
@@ -30,6 +31,18 @@ $(document).ready(function() {
 
         // Add 'active' class to the clicked menu item
         $(this).addClass('active');
+    });
+    // Stop scroll before the H2 tag
+    var menuHeight = $('.mega-menu').outerHeight(); // Get the height of the sticky menu
+    $($megaMenuItem).on('click', function(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            var scrollOffset = target.offset().top - menuHeight - 20;
+            $('html, body').animate({
+                scrollTop: scrollOffset
+            }, 0);
+        }
     });
 /***************
  HAMBURGER MENU
