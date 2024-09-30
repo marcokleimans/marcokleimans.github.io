@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/704eb226d1.js" crossorigin="anonymous"></script>
+    <script src="assets/scripts.js" type="text/javascript"></script>
+    <title>Marco Kleimans</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Menu-->
+    <div class="menu-wrapper">
+        <a href="" aria-label="click on logo to go back to top"><img src="/assets/favicon.png" alt="MK Logo"></a>
+        <!--Theme Toggle-->
+        <div class="switch-container">
+            <input type="checkbox" id="switch" class="checkbox"/>
+            <label for="switch" class="toggle">
+                <i class="fa-solid fa-sun"></i><i class="fa-solid fa-moon"></i>
+            </label>
+        </div>
+        <div class="mega-menu">
+            <a href="#profile">Personal Profile</a>
+            <a href="#work">Work Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#facts">Interests and Activities</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a aria-label="open and close hamburger menu" class="hamburger-toggle"><i class="fa-solid fa-bars"></i></a>
+        <div class="hamburger-menu-container">
+            <div class="hamburger-menu">
+                <a href="#profile">Personal Profile</a>
+                <a href="#work">Work Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#facts">Interests and Activities</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Main Content-->
+    <div class="full-width-wrapper intro mb-5">
+        <div class="row container align-items-center">
+            <div class="col-lg-4 col-12">
+                <figure>
+                    <img src="assets/images/headshot.png" alt="Marco Kleimans headshot">
+                </figure>
+            </div>
+            <div class="col-lg-8 col-12">
+                <h1><i class="fa-solid fa-quote-left"></i>
+                    When you realize there is something you don't understand,
+                    then you're generally on the right path to understanding all kinds of things.
+                    <i class="fa-solid fa-quote-right"></i></h1>
+                <p class="mb-0 text-end"><em>The Solitaire Mystery</em></p>
+                <p class="text-end"><strong>Jostein Gaarder</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-width-wrapper mb-5">
+        <h2 id="profile">Personal Profile</h2>
+        <p>
+            My name is <strong>Marco Kleimans</strong> and as of today, I am <strong class="age"></strong>. I am currently living in
+            Houston, Texas, with my amazing girlfriend who is finishing her Master's degree at Rice University. I was born
+            in Moscow, Russia, but spent most of my childhood in Buenos Aires, Argentina, where I grew up.
+            I then moved to Los Angeles, California, where I graduated from the
+            <a href="https://www.usc.edu/" target="_blank">University of Southern California</a> with a
+            Bachelor's and a Master's degree in
+            <a href="https://cee.usc.edu/academics/undergraduate-programs/environmental-engineering/" target="_blank">Environmental Engineering</a>.
+            After graduation – and as a result of life decisions and opportunities – I decided to pivot away from Environmental
+            Engineering and started working as a Web Developer at the <a href="https://www.isi.edu/" target="_blank">Information Sciences Institute</a>.
+        </p>
+        <p>As <a href="https://en.wikipedia.org/wiki/Jostein_Gaarder" target="_blank">Jostein Gaarder</a> claims -
+            my favorite writer and philosopher from Norway - embracing uncertainty and accepting one's shortcomings
+            is a critical first step towards self-improvement and realization. His book "<em>The Solitaire Mystery</em>" has been
+            a hallmark for me, as it narrates the story of a father and son who relentlessly search for their missing
+            wife and mother, while strange encounters with mythical creatures along the way inspire a though-provoking
+            exploration of the meaning of life. This is, without doubt, a metaphor of meaning, of reaching the unthinkable,
+            and being able to enjoy the journey while welcoming the unexpected.</p>
+        <p>This story is my banner: I always enthusiastic about facing new challenges that force me to step outside my
+            comfort zone, but I am also pragmatic and always looking forward to learning and developing new skills.
+            I consider myself methodical and organized, persevering and energetic, and both flexible and always well-disposed.
+            I'm passionate about new technologies, and optimistic about the future. Having a multicultural background
+            allows me to analyze complex situations from different perspectives to find the most fitting solution for each scenario.
+            I enjoy learning, sharing, and helping others accomplish their goals, approaching all tasks with open-mindedness
+            and excitement.</p>
+    </div>
+    <div class="fixed-width-wrapper">
+        <h2 id="work">Work Experience</h2>
+    </div>
+    <div class="fixed-width-wrapper max-width-2000 mb-5">
+        <div class="row container work-experience-container">
+            <div class="mb-4 col-lg-6 col-12">
+                <div class="work-experience-description isi card h-100">
+                    <div class="work-experience-description-container">
+                        <h3>Web Developer I</h3>
+                        <h4>Information Sciences Institute (ISI)</h4>
+                        <p><i class="fa-regular fa-calendar"></i>July 2021 - Present</p>
+                        <p><i class="fa-solid fa-map-pin"></i>Remote (Marina del Rey, California)</p>
+                        <p><i class="fa-solid fa-pen-to-square"></i>Description</p>
+                        <p><i class="fa-solid fa-screwdriver-wrench"></i>HTML, CSS, PHP, JavaScript, SQL, WordPress,
+                            Beaver
+                            Builder, GitHub, Jira, Affinity Designer, Microsoft Office</p>
+                        <a href="https://www.isi.edu/" type="button" class="btn btn" target="_blank">ISI Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4 col-lg-6 col-12 ">
+                <div class="work-experience-description lab card h-100">
+                    <div class="work-experience-description-container h-100">
+                        <h3>Water Treatment Researcher</h3>
+                        <h4>McCurry Lab</h4>
+                        <p><i class="fa-regular fa-calendar"></i>March 2019 - May 2021</p>
+                        <p><i class="fa-solid fa-map-pin"></i>Los Angeles, California</p>
+                        <p><i class="fa-solid fa-pen-to-square"></i>Description</p>
+                        <p><i class="fa-solid fa-screwdriver-wrench"></i>Analytical Chemistry, Organic Chemistry,
+                            Liquid-Liquid Extraction, Solutions/Dilutions, Water and Wastewater Treatment</p>
+                        <a href="https://www.mccurrylab.com/" type="button" class="btn btn" target="_blank">McCurry Lab
+                            Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4 col-lg-6 col-12">
+                <div class="work-experience-description urus card h-100">
+                    <div class="work-experience-description-container h-100">
+                        <h3>Product Management Intern</h3>
+                        <h4>URUS City</h4>
+                        <p><i class="fa-regular fa-calendar"></i>January 2021 - May 2021</p>
+                        <p><i class="fa-solid fa-map-pin"></i>Moscow, Russia</p>
+                        <p><i class="fa-solid fa-pen-to-square"></i>Description</p>
+                        <p><i class="fa-solid fa-screwdriver-wrench"></i>Product Management, Product and Market
+                            Research,
+                            Product Knowledge, Slide Creation, Presentation</p>
+                        <a href="https://urus.city/en" type="button" class="btn btn" target="_blank">URUS Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4 col-lg-6 col-12">
+                <div class="work-experience-description parkside card h-100">
+                    <div class="work-experience-description-container h-100">
+                        <h3>Student Supervisor</h3>
+                        <h4>International Residential College at Parkside</h4>
+                        <p><i class="fa-regular fa-calendar"></i>September 2018 - May 2020</p>
+                        <p><i class="fa-solid fa-map-pin"></i>Los Angeles, California</p>
+                        <p><i class="fa-solid fa-pen-to-square"></i>Description</p>
+                        <p><i class="fa-solid fa-screwdriver-wrench"></i>Communication, Customer Service, Customer
+                            Relations
+                        </p>
+                        <a href="https://housing.usc.edu/index.php/customer-service-centers/" type="button"
+                           class="btn btn"
+                           target="_blank">Parkside IRC Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-width-wrapper">
+        <h2 id="projects">Projects</h2>
+    </div>
+    <div class="fixed-width-wrapper">
+        <h2 id="facts">Interests and Activities</h2>
+    </div>
+    <div class="fixed-width-wrapper">
+        <h2 id="contact">Contact</h2>
+    </div>
+
+    <div class="footer text-center">
+        Marco Kleimans - Last updated: <strong class="last-push"></strong>
+    </div>
+</body>
+</html>

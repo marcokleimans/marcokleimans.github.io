@@ -1,0 +1,20 @@
+body{
+    overflow: hidden;
+}
+img {
+    object-fit: cover;
+    min-width: 100%;
+}
+.construction-container{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F2F0EF;
+    border-radius: 15px;
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    box-shadow: 0px 0px 10px #cdcdcd;
+}
