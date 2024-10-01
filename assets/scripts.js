@@ -111,8 +111,23 @@ $(document).ready(function() {
             $(this).text('Read Less');
         }
     });
-
-
+    /************
+     Remove on scroll
+     *************/
+    var description = $('.description');
+    description.on('scroll', function() {
+        if ($(this).hasClass('expanded')) {
+            $(this).find('.shadow').css('display', 'none');
+        } else {
+            $(this).find('.shadow').css('display', 'block');
+        }
+    });
+    $('.read-more').on('click', function() {
+        if (!description.hasClass('expanded')) {
+            description.find('.shadow').css('display', 'block');
+            description.animate({ scrollTop: 0 }, 'slow');
+        }
+    });
     /************
      TABS
      *************/

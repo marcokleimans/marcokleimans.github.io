@@ -131,7 +131,6 @@ THEME
 .description-wrapper {
     position: relative;
 }
-
 .description {
     max-height: 80px;
     overflow: hidden;
@@ -139,7 +138,8 @@ THEME
     transition: max-height 0.5s ease;
 }
 .description.expanded {
-    max-height: 1000px;
+    max-height: 40vh;
+    overflow-y: scroll;
 }
 .shadow{
     display: block;
@@ -150,9 +150,9 @@ THEME
     width: 100%;
     height: 30px;
 }
-.description.expanded .shadow{
-    display: none;
-}
+/*.description.expanded .shadow{*/
+/*    display: none;*/
+/*}*/
 .tabs {
     display: flex;
 }
