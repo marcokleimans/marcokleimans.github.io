@@ -94,7 +94,35 @@ $(document).ready(function() {
             $('.last-push').text(formattedDate);
         }
     });
+    /************
+     READ MORE - DESCRIPTION
+     *************/
+    $('.read-more').on('click', function() {
+        var description = $(this).prev('.description'); // Get the description div
 
+        // Check if the description is expanded
+        if (description.hasClass('expanded')) {
+            // If expanded, collapse it and change the button text to "Read More"
+            description.removeClass('expanded');
+            $(this).text('Read More');
+        } else {
+            // If collapsed, expand it and change the button text to "Read Less"
+            description.addClass('expanded');
+            $(this).text('Read Less');
+        }
+    });
+
+
+    /************
+     TABS
+     *************/
+    $('.tab-link').on('click', function() {
+        var tabID = $(this).data('tab');
+        $('.tab-panel').hide();
+        $('.tab-link').removeClass('active');
+        $('#' + tabID).fadeIn(300);
+        $(this).addClass('active');
+    });
 });
 
 
