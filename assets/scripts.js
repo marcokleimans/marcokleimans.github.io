@@ -1,18 +1,29 @@
 $(document).ready(function() {
 /***********
- THEME TOGGLE
- **********/
+VARIABLES
+**********/
     var $body = $('body');
     var $checkbox = $('#switch');
+    var megaMenuItem = $('.mega-menu a')
+    var menuHeight = $('.mega-menu').outerHeight();
+    var hamburgerMenuHeight = $('.hamburger-menu').outerHeight();
+    var hamburgerMenuItem = $('.hamburger-menu a');
+    var birthDate = new Date(1998, 7, 8); // Month is 0-indexed (7 = August)
+    var today = new Date();
+    var years = today.getFullYear() - birthDate.getFullYear();
+    var description = $('.description');
 
-    // Set initial theme based on checkbox state
+
+/***********
+ THEME TOGGLE
+ **********/
+
     if ($checkbox.is(':checked')) {
         $body.removeClass('light-theme').addClass('dark-theme');
     } else {
         $body.removeClass('dark-theme').addClass('light-theme');
     }
 
-    // Toggle theme when checkbox is clicked
     $checkbox.on('change', function() {
         if ($checkbox.is(':checked')) {
             $body.removeClass('light-theme').addClass('dark-theme');
@@ -23,45 +34,50 @@ $(document).ready(function() {
 /***********
  MENU BORDER
  **********/
-    // Underline on Click
-    var $megaMenuItem = $('.mega-menu a')
-    $($megaMenuItem).on('click', function() {
-        // Remove 'active' class from all menu items
-        $($megaMenuItem).removeClass('active');
+    $(megaMenuItem).on('click', function() {
 
-        // Add 'active' class to the clicked menu item
+        $(megaMenuItem).removeClass('active');
+
         $(this).addClass('active');
-    });
-    // Stop scroll before the H2 tag
-    var menuHeight = $('.mega-menu').outerHeight(); // Get the height of the sticky menu
-    $($megaMenuItem).on('click', function(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
-        var target = $(this.getAttribute('href'));
-        if (target.length) {
-            var scrollOffset = target.offset().top - menuHeight - 20;
-            $('html, body').animate({
-                scrollTop: scrollOffset
-            }, 0);
-        }
-    });
-/***************
- HAMBURGER MENU
-******************/
-    // Toggle menu open/close on clicking the bars icon
-    $('.hamburger-toggle').on('click', function() {
-        $('.hamburger-menu-container').toggleClass('open'); // Toggle the 'open' class
+
     });
 
-    // Close the menu when a menu item is clicked
-    $('.hamburger-menu a').on('click', function() {
-        $('.hamburger-menu-container').removeClass('open'); // Remove 'open' class to close menu
+/***************
+ HAMBURGER MENU TOGGLE
+******************/
+
+    $('.hamburger-toggle').on('click', function() {
+        $('.hamburger-menu-container').toggleClass('open');
     });
+
+    hamburgerMenuItem.on('click', function() {
+        $('.hamburger-menu-container').removeClass('open');
+    });
+
+/*********
+ MENU SCROLL
+ *********/
+
+    function handleMenuClick(menuItem, offsetHeight) {
+        $(menuItem).on('click', function(event) {
+            event.preventDefault();
+
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                var scrollOffset = target.offset().top - offsetHeight - 30;
+                $('html, body').animate({
+                    scrollTop: scrollOffset
+                }, 0);
+            }
+        });
+    }
+    handleMenuClick(hamburgerMenuItem, hamburgerMenuHeight);
+    handleMenuClick(megaMenuItem, menuHeight);
+
 /*********
  CALCULATE AGE
  *********/
-    var birthDate = new Date(1998, 7, 8); // Month is 0-indexed (7 = August)
-    var today = new Date();
-    var years = today.getFullYear() - birthDate.getFullYear();
+
     var isBeforeBirthday = (today.getMonth() < birthDate.getMonth()) ||
         (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate());
     if (isBeforeBirthday) {
@@ -73,9 +89,75 @@ $(document).ready(function() {
     }
     var daysSinceLastBirthday = Math.floor((today - lastBirthday) / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
     $('.age').text(years + ' years and ' + daysSinceLastBirthday + ' days old');
-/*********
- LAST PUSH
-*********/
+
+    /************
+     READ MORE - DESCRIPTION
+     *************/
+    $('.btn-2.read-more').on('click', function() {
+        var description = $(this).prev('.description');
+
+        // Check if the description is expanded
+        if (description.hasClass('expanded')) {
+            description.removeClass('expanded');
+            $(this).text('Read More');
+        } else {
+            description.addClass('expanded');
+            $(this).text('Read Less');
+        }
+    });
+    /************
+     Remove shadow on scroll
+     *************/
+    description.on('scroll', function() {
+        if ($(this).hasClass('expanded')) {
+            $(this).find('.shadow').css('display', 'none');
+        } else {
+            $(this).find('.shadow').css('display', 'block');
+        }
+    });
+    $('.btn-2').on('click', function() {
+        if (!description.hasClass('expanded')) {
+            description.find('.shadow').css('display', 'block');
+            description.animate({ scrollTop: 0 }, 'slow');
+        }
+    });
+    /************
+     TABS
+     *************/
+    $('.tab-link').on('click', function() {
+        var tabID = $(this).data('tab');
+        $('.tab-panel').hide();
+        $('.tab-link').removeClass('active');
+        $('#' + tabID).fadeIn(300);
+        $(this).addClass('active');
+    });
+    /*********
+     DISPLAY IMAGES DYNAMICALLY
+     *********/
+    const imageContainer = $('#gallery-image-container');
+    const totalImages = 68;
+
+    for (let i = 0; i <= totalImages; i++) {
+
+        const imageWrapper = $('<div>', {
+            class: 'image-wrapper col-lg-3 col-md-4 col-sm-6 col-12'
+        });
+
+        const figure = $('<figure>');
+
+        const img = $('<img>', {
+            src: `/assets/images/gallery/life_in_digital_${i}.jpg`,
+            alt: `life_in_digital_${i}`,
+            class: 'dynamic-image'
+        });
+
+        figure.append(img);
+        imageWrapper.append(figure);
+        imageContainer.append(imageWrapper);
+    }
+    /*********
+     LAST PUSH API
+     *********/
     var repoOwner = 'marcokleimans';
     var repoName = 'marcokleimans.github.io';
 
@@ -94,50 +176,5 @@ $(document).ready(function() {
             $('.last-push').text(formattedDate);
         }
     });
-    /************
-     READ MORE - DESCRIPTION
-     *************/
-    $('.read-more').on('click', function() {
-        var description = $(this).prev('.description'); // Get the description div
-
-        // Check if the description is expanded
-        if (description.hasClass('expanded')) {
-            // If expanded, collapse it and change the button text to "Read More"
-            description.removeClass('expanded');
-            $(this).text('Read More');
-        } else {
-            // If collapsed, expand it and change the button text to "Read Less"
-            description.addClass('expanded');
-            $(this).text('Read Less');
-        }
-    });
-    /************
-     Remove on scroll
-     *************/
-    var description = $('.description');
-    description.on('scroll', function() {
-        if ($(this).hasClass('expanded')) {
-            $(this).find('.shadow').css('display', 'none');
-        } else {
-            $(this).find('.shadow').css('display', 'block');
-        }
-    });
-    $('.read-more').on('click', function() {
-        if (!description.hasClass('expanded')) {
-            description.find('.shadow').css('display', 'block');
-            description.animate({ scrollTop: 0 }, 'slow');
-        }
-    });
-    /************
-     TABS
-     *************/
-    $('.tab-link').on('click', function() {
-        var tabID = $(this).data('tab');
-        $('.tab-panel').hide();
-        $('.tab-link').removeClass('active');
-        $('#' + tabID).fadeIn(300);
-        $(this).addClass('active');
-    });
 });
-
 
