@@ -511,6 +511,12 @@ THEME
         color: var(--dark);
     }
 }
+@media (max-width: 576px) {
+    .mb-small-2{
+        margin-bottom: 1rem;
+        display: block;
+    }
+}
 @media (max-width: 517px){
     .tab-link{
         padding: 5px;
