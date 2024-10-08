@@ -174,7 +174,9 @@ const $myButton = $('#toTop');
      *********/
     $('form').on('submit', function(event) {
         $(this).fadeOut();
-        $('.alert-success').show()
+        setTimeout(function() {
+            $('.alert-success').show()
+        }, 1000);
     })
     /*********
      LAST PUSH API
