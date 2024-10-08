@@ -1,5 +1,14 @@
-body{
+body.b1{
     overflow: hidden;
+    background: url("/assets/images/led_1.jpg") no-repeat center center fixed;
+}
+body.b2{
+    overflow: hidden;
+    background: url("/assets/images/led_2.jpg") no-repeat center center fixed;
+}
+body.b3{
+    overflow: hidden;
+    background: url("/assets/images/led_3.jpg") no-repeat center center fixed;
 }
 img {
     object-fit: cover;
