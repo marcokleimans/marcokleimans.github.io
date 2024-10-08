@@ -15,9 +15,23 @@ VARIABLES
 
 
 /***********
- THEME TOGGLE
+SCROLL TO TOP
  **********/
 
+const $myButton = $('#toTop');
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 100) {
+            $myButton.fadeIn();
+        } else {
+            $myButton.fadeOut();
+        }
+    });
+    $myButton.on('click', function() {
+        $('html, body').scrollTop(0);
+    });
+/***********
+ THEME TOGGLE
+ **********/
     if ($checkbox.is(':checked')) {
         $body.removeClass('light-theme').addClass('dark-theme');
     } else {
@@ -155,6 +169,12 @@ VARIABLES
         imageWrapper.append(figure);
         imageContainer.append(imageWrapper);
     }
+    /*********
+     HIDE FORM AFTER SUBMISSION
+     *********/
+    $('form').on('submit', function(event) {
+        $(this).fadeOut();
+    })
     /*********
      LAST PUSH API
      *********/

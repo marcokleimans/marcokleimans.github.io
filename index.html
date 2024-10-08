@@ -27,7 +27,8 @@
 </head>
 
 <body>
-
+    <a onclick="topFunction()" id="toTop" aria-label="Go to top"><i class="fa-solid fa-angle-up"></i>
+    </a>
     <!--Menu-->
     <div class="menu-wrapper">
         <a href="" aria-label="click on logo to go back to top"><img src="/assets/favicon.png" alt="MK Logo"></a>
@@ -913,6 +914,32 @@
     </div>
     <div class="fixed-width-wrapper mb-5 contact-container">
         <h2 id="contact">Contact</h2>
+        <form action="https://formspree.io/f/mpwzappl" class="mb-3" method="POST">
+
+            <div class="mb-3">
+                <label for="first" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first" name="First Name" placeholder="First Name" aria-label="First name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="last" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last" name="Last Name" placeholder="First Name" aria-label="Last Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="joedoe@gmail.com" aria-label="e.g. joedoe@gmail.com" aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="comment" class="form-label">What's in Your Mind?</label>
+                <textarea class="form-control" id="comment" rows="5" placeholder="Don't be shy!" aria-label="Don't be shy!" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-2">Send</button>
+
+        </form>
         <div class="contact-container d-flex justify-content-center">
             <a href="https://www.linkedin.com/in/marco-kleimans/" aria-label="link to LinkedIin" target="_blank"><i
                 class="fa-brands fa-linkedin fa-3x me-5"></i></a>

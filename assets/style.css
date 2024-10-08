@@ -64,6 +64,26 @@ p{
 /*********
 THEME
 **********/
+#toTop{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgba(51, 51, 51, 0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    line-height: 1.2rem;
+}
+
+#toTop:hover {
+    background-color: #555;
+    cursor: pointer;
+}
 .full-width-wrapper.intro{
     display: flex;
     justify-content: center;
@@ -156,9 +176,6 @@ THEME
     width: 100%;
     height: 30px;
 }
-/*.description.expanded .shadow{*/
-/*    display: none;*/
-/*}*/
 .tabs {
     display: flex;
 }
@@ -225,16 +242,18 @@ THEME
     margin: 15px;
 }
 .gallery-container{
-    position: relative;
-    top: -50px;
+    /*position: absolute;*/
+    /*top: -50px;*/
     max-height: 70vh;
     overflow-y: scroll;
+    margin-top:-50px;
+    margin-bottom:-50px;
 }
 .gallery-shadow-top{
     display: block;
     position: relative;
     z-index: 1;
-    top: 0px;
+    top: 0;
     background: rgba(1, 1, 1, 0.5);
     background: linear-gradient(180deg, rgba(1, 1, 1, 0.5), rgba(255, 255, 255, 0.0));
     width: 100%;
@@ -243,15 +262,22 @@ THEME
 .gallery-shadow-bottom{
     display: block;
     position: relative;
-    bottom: 100px;
     z-index: 1;
     background: rgba(1, 1, 1, 0.5);
-    background: linear-gradient(0deg, rgba(1, 1, 1, 0.5), rgba(255, 255, 255, 0.0));
+    background: linear-gradient(0deg, rgba(1, 1, 1, 0.7), rgba(255, 255, 255, 0.0));
     width: 100%;
     height: 50px;
 }
 .dynamic-image{
    max-width: 100%;
+}
+form{
+    box-shadow:  0 0 5px var(--gloom);
+    border-radius: 15px;
+    padding: 20px;
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
 }
 .fa-envelope:hover{
     color:  #ea4336;
@@ -259,11 +285,11 @@ THEME
 .fa-linkedin:hover{
     color:  #0d67c2;
 }
-.contact-container,
-.contact-container h2{
-    position: relative;
-    top: -50px;
-}
+/*.contact-container,*/
+/*.contact-container h2{*/
+/*    position: relative;*/
+/*    top: -50px;*/
+/*}*/
 /*1 - DARK*/
 .dark-theme{
     background-color: var(--dark);
@@ -319,6 +345,12 @@ THEME
 .dark-theme .tab-link {
     background-color: var(--sand);
     color: var(--shine);
+}
+.dark-theme form{
+    background-color: var(--sand);
+}
+.dark-theme form #emailHelp{
+    color: var(--gloom);
 }
 /*2 - LIGHT*/
 .light-theme{
@@ -376,6 +408,9 @@ THEME
     background-color: var(--glaciar);
     color: var(--ocean);
 }
+.light-theme form{
+    background-color: var(--glaciar);
+}
 /*THEME SWITCH*/
 .switch-container{
     position: absolute;
@@ -427,6 +462,11 @@ THEME
     background-color: var(--sand);
 }
 /*MOBILE*/
+@media (max-width: 1024px) {
+    #toTop{
+        right: 20px;
+    }
+}
 @media (max-width: 900px){
     .mega-menu a{
         margin: 0 7px;
