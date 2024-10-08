@@ -176,7 +176,7 @@ const $myButton = $('#toTop');
         $(this).fadeOut();
         setTimeout(function() {
             $('.alert-success').show()
-        }, 1000);
+        }, 2000);
     })
     /*********
      LAST PUSH API
