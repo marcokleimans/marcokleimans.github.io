@@ -563,6 +563,7 @@ form{
 @media (max-width: 576px) {
     .mb-small-2{
         margin-bottom: 1rem;
+        max-width: fit-content;
         display: block;
     }
 }
