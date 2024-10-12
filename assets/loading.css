@@ -1,14 +1,26 @@
 body.b1{
     overflow: hidden;
-    background: url("/assets/images/led_1.jpg") no-repeat center center fixed;
+    background: url("/assets/images/led_1.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 body.b2{
     overflow: hidden;
-    background: url("/assets/images/led_2.jpg") no-repeat center center fixed;
+    background: url("/assets/images/led_2.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 body.b3{
     overflow: hidden;
-    background: url("/assets/images/led_3.jpg") no-repeat center center fixed;
+    background: url("/assets/images/led_3.jpg") ;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 img {
     object-fit: cover;
