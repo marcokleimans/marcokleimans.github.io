@@ -128,6 +128,12 @@ THEME
 .work-experience-description i{
     margin-right: 10px;
 }
+.tenaris{
+    background: url("/assets/images/tenaris.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .isi{
     background: url("/assets/images/usc_isi.jpg");
     background-repeat: no-repeat;
